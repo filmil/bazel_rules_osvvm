@@ -1,4 +1,4 @@
-load("@bazel_rules_nvc//build/nvc:rules.bzl", "vhdl_library")
+load("@rules_nvc//build/nvc:rules.bzl", "vhdl_library")
 
 vhdl_library(
     name = "lib",

@@ -3,7 +3,7 @@
 module(name = "rules_osvvm", version = "0.0.0")
 
 
-bazel_dep(name = "bazel_rules_nvc", version = "0.5.2")
+bazel_dep(name = "rules_nvc", version = "1.0.0")
 bazel_dep(name = "rules_shell", version = "0.6.1")
 
 
