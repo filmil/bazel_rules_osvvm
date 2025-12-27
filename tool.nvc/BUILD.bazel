@@ -1,4 +1,5 @@
 load("@bazel_rules_nvc//build/nvc:rules.bzl", "vhdl_library")
+load("@rules_shell//shell:sh_test.bzl", "sh_test")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -12,3 +13,11 @@ vhdl_library(
     ],
     standard = "2019",
 )
+
+sh_test(
+    name = "test",
+    srcs = [
+        "test.bash",
+    ],
+)
+
