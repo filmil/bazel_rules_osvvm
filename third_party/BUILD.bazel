@@ -30,7 +30,11 @@ filegroup(
     srcs = [
        "//third_party:osvvm/FileLinePathPkg.vhd",
         #"deprecated/FileLinePathPkg_c.vhd",
-       "//third_party:osvvm/LanguageSupport2019Pkg.vhd",
+    ] + select({
+        "//:standard_2019": ["//third_party:osvvm/LanguageSupport2019Pkg.vhd"],
+        "//:standard_2023": ["//third_party:osvvm/LanguageSupport2019Pkg.vhd"],
+        "//conditions:default": [],
+    }) + [
        "//third_party:osvvm/OsvvmSettingsPkg.vhd",
        "//third_party:osvvm/AlertLogPkg.vhd",
        "//third_party:osvvm/ResolutionPkg.vhd",
@@ -48,7 +52,11 @@ filegroup(
        "//third_party:osvvm/MemoryGenericPkg.vhd",
        "//third_party:osvvm/MemoryPkg.vhd",
        "//third_party:osvvm/MessagePkg.vhd",
-       "//third_party:osvvm/RandomPkg2019.vhd",
+    ] + select({
+        "//:standard_2019": ["//third_party:osvvm/RandomPkg2019.vhd"],
+        "//:standard_2023": ["//third_party:osvvm/RandomPkg2019.vhd"],
+        "//conditions:default": [],
+    }) + [
        "//third_party:osvvm/DelayCoveragePkg.vhd",
        "//third_party:osvvm/ResizePkg.vhd",
        "//third_party:osvvm/ScoreboardGenericPkg.vhd",

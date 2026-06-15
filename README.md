@@ -39,3 +39,12 @@ register_toolchains("@llvm_toolchain//:all", dev_dependency = True)
 See [integration/BUILD.bazel](integration/tool.nvc/BUILD.bazel) for an example
 use.
 
+### Specifying the VHDL Standard
+
+You can select the VHDL standard used to compile OSVVM files by passing the `standard` flag to Bazel. Supported standard values are `1993`, `2000`, `2002`, `2008`, `2019`, and `2023`. The default standard is `2019`.
+
+```bash
+bazel build //... --@rules_osvvm//:standard=2008
+```
+
+Files that require newer standards (e.g., 2019) are conditionally excluded when compiling for older standards. If a specific standard is fundamentally unsupported by OSVVM or the toolchain, the build will fail.
