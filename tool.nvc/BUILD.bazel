@@ -8,7 +8,12 @@ vhdl_library(
     # do not sort
     srcs = [
         "//third_party:srcs1",
-        "//third_party:srcs2_nvc",
+    ] + select({
+        "//:standard_1993": [],
+        "//:standard_2000": [],
+        "//:standard_2002": [],
+        "//conditions:default": ["//third_party:srcs2_nvc"],
+    }) + [
         "//third_party:srcs",
     ],
     standard = select({
