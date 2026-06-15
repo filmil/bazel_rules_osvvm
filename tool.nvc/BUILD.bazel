@@ -11,7 +11,15 @@ vhdl_library(
         "//third_party:srcs2_nvc",
         "//third_party:srcs",
     ],
-    standard = "2019",
+    standard = select({
+        "//:standard_1993": "1993",
+        "//:standard_2000": "2000",
+        "//:standard_2002": "2002",
+        "//:standard_2008": "2008",
+        "//:standard_2019": "2019",
+        "//:standard_2023": "2023",
+        "//conditions:default": "2019",
+    }),
 )
 
 sh_test(
