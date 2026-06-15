@@ -3,7 +3,7 @@ load("@bazel_skylib//rules:common_settings.bzl", "string_flag")
 string_flag(
     name = "standard",
     build_setting_default = "2019",
-    values = ["1993", "2000", "2002", "2008", "2019", "2023"],
+    values = ["1993", "2000", "2002", "2008", "2019"],
     visibility = ["//visibility:public"],
 )
 
@@ -13,5 +13,5 @@ string_flag(
         flag_values = {":standard": standard},
         visibility = ["//visibility:public"],
     )
-    for standard in ["1993", "2000", "2002", "2008", "2019", "2023"]
+    for standard in ["1993", "2000", "2002", "2008", "2019"]
 ]

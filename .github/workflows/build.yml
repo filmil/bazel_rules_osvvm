@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        standard: ["1993", "2000", "2002", "2008", "2019", "2023"]
+        standard: ["1993", "2000", "2002", "2008", "2019"]
     steps:
       - name: Install prerequisites
         run: "sudo apt-get install -y llvm-dev"

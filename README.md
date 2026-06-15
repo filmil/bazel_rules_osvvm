@@ -41,7 +41,7 @@ use.
 
 ### Specifying the VHDL Standard
 
-You can select the VHDL standard used to compile OSVVM files by passing the `standard` flag to Bazel. Supported standard values are `1993`, `2000`, `2002`, `2008`, `2019`, and `2023`. The default standard is `2019`.
+You can select the VHDL standard used to compile OSVVM files by passing the `standard` flag to Bazel. Supported standard values are `1993`, `2000`, `2002`, `2008`, and `2019`. The default standard is `2019`.
 
 ```bash
 bazel build //... --@rules_osvvm//:standard=2008
